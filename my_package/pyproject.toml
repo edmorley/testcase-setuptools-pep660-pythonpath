@@ -1,0 +1,12 @@
+[project]
+name = "my_package"
+version = "0.0.1"
+
+[project.scripts]
+hello = "my_package:hello"
+
+[build-system]
+# Version tightly pinnned just so that this testcase is reproducible over time.
+# Adjust this version to `<64` to see behaviour prior to the setuptools v64's PEP660 support.
+requires = ["setuptools==65.0.2", "wheel"]
+build-backend = "setuptools.build_meta:__legacy__"
